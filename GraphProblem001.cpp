@@ -4,8 +4,9 @@ using namespace std;
 bool isBipartite(int **graph, int n) {
     int *color = new int[n];
     for (int i = 0; i < n; i++)
-        color[i] = -1; // -1 means uncolored
+        color[i] = -1; 
 
+    
     for (int start = 0; start < n; start++) {
         if (color[start] == -1) {
             int *queue = new int[n];
@@ -38,6 +39,9 @@ bool isBipartite(int **graph, int n) {
     return true;
 }
 
+
+
+
 int main() {
     int n;
     cout << "Enter number of vertices: ";
@@ -55,10 +59,12 @@ int main() {
         }
     }
 
-    if (isBipartite(graph, n))
+    if (isBipartite(graph, n)){
         cout << "The graph is bipartite";
-    else
+    }
+    else {
         cout << "The graph is not bipartite";
+    }
 
     for (int i = 0; i < n; i++)
         delete[] graph[i];
