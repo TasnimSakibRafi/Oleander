@@ -74,10 +74,10 @@ int main() {
     Node* head = nullptr;
     int n, value;
 
-    cout << "Enter number of nodes: ";
+    cout << "Enter Number Nf Nodes: ";
     cin >> n;
 
-    cout << "Enter values : "; 
+    cout << "Enter Values : "; 
     for (int i = 0; i < n; i++) {
         cin >> value;
         head = insertEnd(head, value);
