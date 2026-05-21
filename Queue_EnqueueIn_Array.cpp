@@ -1,21 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int *queueArr;   // dynamic array for queue
-int rear = -1;   // rear index (last element)
-int maxSize;     // queue size
+int *queueArr;   
+int rear = -1;   
+int maxSize;     
+
 
 bool isFull() {
     return (rear == maxSize - 1);
 }
 
+
+
 void enqueue(int data) {
     if (!isFull()) {
-        queueArr[++rear] = data;   // place new element at rear
+        queueArr[++rear] = data;  
     } else {
         cout << "Queue is full" << endl;
     }
 }
+
+
 
 void display() {
     if (rear == -1) {
@@ -29,15 +34,18 @@ void display() {
     cout << endl;
 }
 
+
+
 int main() {
     int value;
 
     cout << "Enter queue size: ";
     cin >> maxSize;
 
-    queueArr = new int[maxSize];   // allocate array dynamically
+    queueArr = new int[maxSize];  
 
-    cout << "Enter values :" << endl;
+    cout << "Enter values :";
+    cout<< endl;
     for (int i = 0; i < maxSize; i++) {
         cin >> value;
         enqueue(value);
@@ -45,6 +53,6 @@ int main() {
 
     display();
 
-    delete[] queueArr;  // free memory
+    delete[] queueArr;  
     return 0;
 }
