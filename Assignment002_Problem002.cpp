@@ -72,7 +72,7 @@ int main() {
 
 
 
-    cout << "Enter A sorted Array : ";
+    cout << "Enter ASorted Array : ";
    
     for (int i = 0; i < n; i++) {
         cin >> value;
@@ -81,7 +81,7 @@ int main() {
 
 
 
-    cout << "Enter Target : ";
+    cout << "Enter Target Value: ";
     cin >> num;
 
     head = insertSorted(head, num);
