@@ -2,8 +2,10 @@
 using namespace std;
 
 int maxSize;
-int top1 = -1, top2 = -1;
-int *stack1, *stack2;
+int top1 = -1;
+int top2 = -1;
+int *stack1;
+int *stack2;
 
 bool isEmpty() {
     return (top1 == -1 && top2 == -1);
@@ -45,15 +47,15 @@ int dequeue() {
         return -1;
     }
 
-    // Move all elements from stack1 to stack2
+
     while (top1 != -1) {
         push2(pop1());
     }
 
-    // Pop from stack2 (front of queue)
+    
     int front = pop2();
 
-    // Move elements back to stack1
+   
     while (top2 != -1) {
         push1(pop2());
     }
@@ -63,7 +65,8 @@ int dequeue() {
 
 void display() {
     if (isEmpty()) {
-        cout << "Queue is Empty\n";
+        cout << "Queue is Empty";
+        cout<<endl;
         return;
     }
     cout << "Queue elements (front to rear): ";
@@ -83,7 +86,8 @@ int main() {
     enqueue(1);
     enqueue(2);
 
-    cout << "Dequeued: " << dequeue() << endl;
+    cout << "Dequeued: " << dequeue();
+    cout<< endl;
     display();
 
     cout << "Is Empty: " << (isEmpty() ? "True" : "False") << endl;

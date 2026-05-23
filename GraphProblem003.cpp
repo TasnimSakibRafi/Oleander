@@ -15,7 +15,7 @@ int main() {
     bool visited[4] = {false};
     queue<int> q;
 
-    // Start BFS from the given node
+    
     visited[start] = true;
     q.push(start);
 
@@ -27,7 +27,7 @@ int main() {
         cout << node;
         bool first = true;
 
-        // Explore neighbors
+      
         for (int i = 0; i < n; i++) {
             if (graph[node][i] == 1 && !visited[i]) {
                 visited[i] = true;
