@@ -1,39 +1,55 @@
 #include <iostream>
 using namespace std;
 
-int *queueArr;   // dynamic array for queue
-int rear = -1;   // rear index (last element)
-int front = 0;   // front index (first element)
-int maxSize;     // queue size
+int *queueArr;   
+int rear = -1;   
+int front = 0;   
+int maxSize;     
+
+
+
 
 bool isFull() {
     return (rear == maxSize - 1);
 }
 
+
+
+
 bool isEmpty() {
     return (front > rear);
 }
 
+
+
+
 void enqueue(int data) {
     if (!isFull()) {
-        queueArr[++rear] = data;   // place new element at rear
+        queueArr[++rear] = data;  
     } else {
         cout << "Queue is full" << endl;
     }
 }
 
+
+
+
 void dequeue() {
     if (!isEmpty()) {
         cout << "Dequeued: " ;<< queueArr[front] << endl;
-        front++;   // move front forward
+        front++;   
     } else {
         cout << "Queue is empty" << endl;
     }
 }
 
+
+
+
 void display() {
     if (isEmpty()) {
-        cout << "Queue is empty" << endl;
+        cout << "Queue is empty";
+        cout<< endl;
         return;
     }
     cout << "Queue elements: ";
@@ -43,15 +59,20 @@ void display() {
     cout << endl;
 }
 
+
+
+
+
 int main() {
     int value;
 
     cout << "Enter queue size: ";
     cin >> maxSize;
 
-    queueArr = new int[maxSize];   // allocate array dynamically
+    queueArr = new int[maxSize];  
 
-    cout << "Enter values:" << endl;
+    cout << "Enter values:";
+    cout << endl;
     for (int i = 0; i < maxSize; i++) {
         cin >> value;
         enqueue(value);
@@ -59,11 +80,11 @@ int main() {
 
     display();
 
-    // Perform only one dequeue
+
     dequeue();
 
     display();
 
-    delete[] queueArr;  // free memory
+    delete[] queueArr;  // free memory 
     return 0;
 }
