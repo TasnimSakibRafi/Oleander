@@ -15,10 +15,10 @@ int main()
     cout<<"Enter total edges: ";
     cin>>E;
 
-    // graph declaration
+   
     vector<vector<int>> graph(V);
 
-    // add edge
+ 
     for(int i=1; i<=E; i++)
     {
         int x, y;
@@ -52,7 +52,10 @@ int main()
         bfs_queue.pop();
         //cout<<current_node<<" ";
 
-        //traverse all the adjacent node of current node
+
+
+
+        
         for(int i=0; i < graph[current_node].size(); i++)
         {
             int neighbour_node = graph[current_node][i];
@@ -67,6 +70,10 @@ int main()
     }
 
 
+
+
+
+    
     // connected graph
 
 //    bool is_connected = true;
@@ -89,12 +96,20 @@ int main()
 //        cout<<"The graph is connected"<<endl;
 //    }
 
+
+
+
+    
     // minimum distance from source vertex
     for(int i=0; i<distance.size(); i++)
     {
         cout<<distance[i]<<" ";
     }
 
+
+
+
+    
     // print shortest path for source and destination
     stack<int> path;
     int destination_vertex;

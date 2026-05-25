@@ -4,6 +4,12 @@
 
 using namespace std;
 
+
+
+
+
+
+
 bool BFS_Help(vector<vector<int>> graph, vector<bool> &visited, int source_vertex)
 {
     queue<int> bfs_queue;
@@ -36,6 +42,7 @@ bool BFS_Help(vector<vector<int>> graph, vector<bool> &visited, int source_verte
 
             }
             else
+                
             {
                 if(color[current_node] == color[neighbour_node])
                 {
@@ -46,6 +53,15 @@ bool BFS_Help(vector<vector<int>> graph, vector<bool> &visited, int source_verte
     }
     return true;
 }
+
+
+
+
+
+
+
+
+
 
 int main()
 {
