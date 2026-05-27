@@ -33,16 +33,18 @@ void printArray(int arr[], int n) {
     printf("\n");
 }
 
-int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Original array: ");
+
+int main() {
+    int arr[] = {66, 27, 13, 25, 15};
+    int n = sizeof(ar) / sizeof(arr[0]);
+
+    printf("Original Array: ");
     printArray(arr, n);
 
     selectionSort(arr, n);
 
-    printf("Sorted array: ");
+    printf("Sorted Array: ");
     printArray(arr, n);
 
     return 0;
