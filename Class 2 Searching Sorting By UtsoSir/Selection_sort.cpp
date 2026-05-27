@@ -1,5 +1,8 @@
-// C program for implementation of selection sort
-#include <stdio.h>
+// C++ program for implementation of selection sort
+
+// The code is the same and every thing is same just I transformed the code into C Plus Plus .
+#include <iostream>
+using namespace std;
 
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
@@ -28,23 +31,21 @@ void selectionSort(int arr[], int n) {
 
 void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        cout << arr[i] << " ";
     }
-    printf("\n");
+    cout << endl;
 }
 
-
-
 int main() {
-    int arr[] = {66, 27, 13, 25, 15};
-    int n = sizeof(ar) / sizeof(arr[0]);
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Original Array: ");
+    cout << "Original array: ";
     printArray(arr, n);
 
     selectionSort(arr, n);
 
-    printf("Sorted Array: ");
+    cout << "Sorted array: ";
     printArray(arr, n);
 
     return 0;
