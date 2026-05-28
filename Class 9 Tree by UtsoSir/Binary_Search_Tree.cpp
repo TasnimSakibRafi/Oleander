@@ -35,3 +35,19 @@ Node* insert(Node* root, int new_data)
 
     return root;
 }
+
+
+void in_order(Node* node)
+{
+    if(node == nullptr) return;
+
+    in_order(node->left);
+
+    cout<<node->data<<" ";
+
+    in_order(node->right);
+}
+
+
+
+
