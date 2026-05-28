@@ -49,5 +49,25 @@ void in_order(Node* node)
 }
 
 
+/// 1, 3, 4, 6, 7, 8, 10, 13, 14
+
+/// inorder predecessor of 7 is 6
+/// inorder successor of 7 is 8
+int minimum_value(Node* root)
+{
+    if(root == nullptr)
+    {
+        return -1;
+    }
+
+    Node* current = root;
+
+    while( current -> left != nullptr)
+    {
+        current = current->left;
+    }
+    return current->data;
+}
+
 
 
