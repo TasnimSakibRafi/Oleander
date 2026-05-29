@@ -33,3 +33,35 @@ void print_array(int arr[], int n)
     printf("\n");
 }
 
+
+
+int main()
+{
+    //int arr[5] = {12,11, 13, 5, 6};
+
+    printf("Enter size of the array: ");
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Before Sorting: ");
+    print_array(arr, n);
+
+    insertion_sort(arr, n);
+
+    printf("After Sorting: ");
+    print_array(arr, n);
+
+    int k;
+    printf("Enter the smallest number of element you want: ");
+    scanf("%d", &k);
+    printf("%d th smallest element :  %d", k, arr[k-1]);
+
+}
+
+
