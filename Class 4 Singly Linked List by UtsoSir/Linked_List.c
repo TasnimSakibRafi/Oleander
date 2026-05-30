@@ -71,6 +71,35 @@ struct Node* insert_at_last(int new_data, struct Node* head)
     return head;
 }
 
+struct Node* insert_at_middle(int position, int new_data, struct Node* head)
+{
+    if(head == NULL && position != 0)
+    {
+        printf("Empty Linked List");
+    }
+    else if(head == NULL && position == 0)
+    {
+        head = create_new_node(new_data);
+    }
+    else
+    {
+        int i = 0;
+        struct Node* temp = head;
+
+        while( i < position - 1)
+        {
+            temp = temp->next;
+            i++;
+        }
+
+        struct Node* new_node = create_new_node(new_data);
+
+        new_node -> next = temp->next;
+        temp->next = new_node;
+    }
+
+    return head;
+}
 
 
 
