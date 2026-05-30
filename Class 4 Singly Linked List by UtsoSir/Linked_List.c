@@ -124,6 +124,49 @@ struct Node* insert_after_particular_element(int new_data, int target, struct No
 }
 
 
+struct Node* delete_particular_element(int target, struct Node* head)
+{
+    struct Node* temp = head;
+
+    /// head value == target
+    if(head->data == target)
+    {
+        struct Node* deleteNode = head;
+        head = head->next;
+        free(deleteNode);
+        return head;
+    }
+
+    /// goes to the element before the target
+    while(temp->next != NULL && temp->next->data != target )
+    {
+        temp = temp->next;
+    }
+
+    /// reached last element but not found target
+    if(temp->next == NULL && temp->data != target)
+    {
+        printf("Target is not in the list. Cannot Not be Deleleted\n");
+    }
+    /// last element is the target element. Just Delete it
+    else if(temp->next == NULL && temp->data == target)
+    {
+        free(temp);
+    }
+    else
+    {
+        /// store node to be delete (temp->next->value == target)
+        /// set temp->next =  the next element of the node to be deleted
+        /// free deletedNode
+        struct Node* deleteNode = temp->next;
+        temp->next = temp->next->next;
+        free(deleteNode);
+    }
+    return head;
+}
+
+
+
 
 
 
