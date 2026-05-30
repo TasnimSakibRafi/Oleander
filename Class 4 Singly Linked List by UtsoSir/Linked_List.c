@@ -165,6 +165,39 @@ struct Node* delete_particular_element(int target, struct Node* head)
     return head;
 }
 
+int size_of_linked_list(struct Node* head)
+{
+    if(head == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int count=0;
+        struct Node* temp = head;
+
+        while(temp != NULL)
+        {
+            count = count + 1;
+            temp = temp->next;
+        }
+        return count;
+    }
+}
+
+int middle_element_of_linked_list(struct Node* head)
+{
+    int size = size_of_linked_list(head);
+
+    int i=0;
+    struct Node* temp = head;
+    while( i < size/2)
+    {
+        temp = temp -> next;
+        i++;
+    }
+    return temp->data;
+}
 
 
 
