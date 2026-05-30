@@ -52,5 +52,26 @@ struct Node* insert_at_first(int new_data, struct Node* head)
 }
 
 
+struct Node* insert_at_last(int new_data, struct Node* head)
+{
+    if(head == NULL)
+    {
+        head = create_new_node(new_data);
+    }
+    else
+    {
+        struct Node* temp = head;
+        while( temp->next != NULL )
+        {
+            temp = temp->next;
+        }
+        temp->next = create_new_node(new_data);
+    }
+
+    return head;
+}
+
+
+
 
 
