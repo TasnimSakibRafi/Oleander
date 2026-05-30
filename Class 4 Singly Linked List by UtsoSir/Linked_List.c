@@ -201,5 +201,69 @@ int middle_element_of_linked_list(struct Node* head)
 
 
 
+int count_occurrences(int target, struct Node* head)
+{
+    struct Node* temp = head;
+    int count = 0;
+
+    while(temp != NULL)
+    {
+        if(temp->data == target)
+        {
+            count++;
+        }
+        temp = temp->next;
+    }
+    return count;
+}
+int main()
+{
+    struct Node* head = NULL;
+
+    head = insert_at_first(10, head);
+
+    head = insert_at_last(20, head);
+
+    head = insert_at_last(30, head);
+
+//    printf("%d->", head->data);
+//    printf("%d->", head->next->data);
+//    printf("%d", head->next->next->data);
+
+    print_linked_list(head);
+
+    head = insert_at_first(40, head);
+    head = insert_at_first(50, head);
+    print_linked_list(head);
+
+    printf("Enter 60 at position 2\n");
+    head = insert_at_middle(2,60, head);
+    print_linked_list(head);
+
+    printf("Enter 70 after element 20\n");
+    head = insert_after_particular_element(70,20,head);
+    print_linked_list(head);
+
+    printf("Delete Node 20\n");
+    head = delete_particular_element(20,head);
+    print_linked_list(head);
+
+    printf("Delete Node 30\n");
+    head = delete_particular_element(30,head);
+    print_linked_list(head);
+
+    printf("Delete Node 80\n");
+    head = delete_particular_element(80,head);
+    print_linked_list(head);
+
+    printf("Size of the linked list = %d\n", size_of_linked_list(head));
+    printf("Middle Element of Linked List = %d\n", middle_element_of_linked_list(head));
+
+    head = insert_at_last(10, head);
+    print_linked_list(head);
+    printf("Occurrences of 10 in the list = %d", count_occurrences(10,head));
+
+
+}
 
 
