@@ -33,3 +33,24 @@ void print_linked_list(struct Node* head)
         printf("\n");
     }
 }
+
+
+
+struct Node* insert_at_first(int new_data, struct Node* head)
+{
+    if(head == NULL)
+    {
+        head = create_new_node(new_data);
+    }
+    else
+    {
+        struct Node* new_node = create_new_node(new_data);
+        new_node->next = head;
+        head = new_node;
+    }
+    return head;
+}
+
+
+
+
