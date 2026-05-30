@@ -101,6 +101,29 @@ struct Node* insert_at_middle(int position, int new_data, struct Node* head)
     return head;
 }
 
+struct Node* insert_after_particular_element(int new_data, int target, struct Node* head)
+{
+    struct Node* temp = head;
+
+    while(temp->data != target && temp != NULL)
+    {
+        temp = temp->next;
+    }
+    if(temp == NULL)
+    {
+        printf("Target %d is not Found in Linked List\n", target);
+    }
+    else
+    {
+        struct Node* new_node = create_new_node(new_data);
+
+        new_node -> next = temp->next;
+        temp->next = new_node;
+    }
+    return head;
+}
+
+
 
 
 
