@@ -41,15 +41,14 @@ string getMonthName(int monthNumber)
 
 int numberOfDays(int monthNumber, int year)
 {
-    // January
+ 
     if (monthNumber == 0)
         return (31);
 
-    // February
+   
     if (monthNumber == 1)
     {
-        // If the year is leap then February has
-        // 29 days
+     
         if (year % 400 == 0 ||
             (year % 4 == 0 && year % 100 != 0))
             return (29);
@@ -57,71 +56,71 @@ int numberOfDays(int monthNumber, int year)
             return (28);
     }
 
-    // March
+  
+    
     if (monthNumber == 2)
         return (31);
 
-    // April
+    
     if (monthNumber == 3)
         return (30);
 
-    // May
+
+    
     if (monthNumber == 4)
         return (31);
 
-    // June
+    
     if (monthNumber == 5)
         return (30);
 
-    // July
+    
     if (monthNumber == 6)
         return (31);
 
-    // August
+    
     if (monthNumber == 7)
         return (31);
 
-    // September
+    
     if (monthNumber == 8)
         return (30);
 
-    // October
+    
     if (monthNumber == 9)
         return (31);
 
-    // November
+    
     if (monthNumber == 10)
         return (30);
 
-    // December
+    
     if (monthNumber == 11)
         return (31);
 }
 
-// Function to print the calendar of the given year
+
 void printCalendar(int year)
 {
     printf("         Calendar - %d\n\n", year);
     int days;
 
-    // Index of the day from 0 to 6
+   
     int current = dayNumber(1, 1, year);
 
-    // i --> Iterate through all the months
-    // j --> Iterate through all the days of the
-    //       month - i
+ 
     for (int i = 0; i < 12; i++)
     {
         days = numberOfDays(i, year);
 
-        // Print the current month name
+     
         printf("\n  ------------%s-------------\n",
                getMonthName(i).c_str());
 
-        // Print the columns
+       
         printf("  Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
 
-        // Print appropriate spaces
+       
         int k;
         for (k = 0; k < current; k++)
             printf("     ");
