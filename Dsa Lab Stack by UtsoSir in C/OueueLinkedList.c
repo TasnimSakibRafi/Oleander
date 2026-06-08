@@ -5,7 +5,7 @@ struct Node
     int data;
     struct Node* next;
 };
-struct Node* front; /// head of linked list
+struct Node* front; 
 
 struct Node* create_new_node(int data)
 {
@@ -19,11 +19,11 @@ int isEmpty()
 {
     if(front == NULL)
     {
-        return 1; /// queue is empty
+        return 1; 
     }
     else
     {
-        return 0; /// queue is not empty
+        return 0; 
     }
 }
 
@@ -38,7 +38,7 @@ void enqueue(int data)
     }
     else
     {
-        /// insert at last
+       
         struct Node* temp = front;
         while(temp->next != NULL)
         {
@@ -50,7 +50,7 @@ void enqueue(int data)
 
 int front_element()
 {
-    /// only return the value of top element. No deletion
+  
     if( front == NULL)
     {
          printf("Queue is empty\n");
@@ -108,18 +108,18 @@ int main()
         switch(option)
         {
         case 1:
-            /// push an element
+           
             printf("Enter New Element: ");
             scanf("%d", &data);
             enqueue(data);
             break;
         case 2:
-            /// Pop an element;
+           
             data = dequeue();
             printf("Dequeued element is %d\n", data);
             break;
         case 3:
-            /// Top Element
+          
             data = front_element();
             printf("Front element of the queue is %d\n", data);
             break;
