@@ -26,9 +26,8 @@ bool BFS_Help(vector<vector<int>> graph, vector<bool> &visited, int source_verte
     {
         int current_node = bfs_queue.front();
         bfs_queue.pop();
-        //cout<<current_node<<" ";
 
-        //traverse all the adjacent node of current node
+        
         for(int i=0; i < graph[current_node].size(); i++)
         {
             int neighbour_node = graph[current_node][i];
@@ -73,10 +72,11 @@ int main()
     cout<<"Enter total edges: ";
     cin>>E;
 
-    // graph declaration
+   
     vector<vector<int>> graph(V);
 
-    // add edge
+
+    
     for(int i=1; i<=E; i++)
     {
         int x, y;
