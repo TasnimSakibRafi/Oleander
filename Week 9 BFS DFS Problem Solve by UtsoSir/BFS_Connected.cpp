@@ -50,7 +50,7 @@ int main()
     {
         int current_node = bfs_queue.front();
         bfs_queue.pop();
-        //cout<<current_node<<" ";
+    
 
 
 
@@ -74,33 +74,7 @@ int main()
 
 
     
-    // connected graph
 
-//    bool is_connected = true;
-//
-//    for(int i=0; i<V ; i++)
-//    {
-//        if(visited[i] == false)
-//        {
-//            is_connected = false;
-//            break;
-//        }
-//    }
-//
-//    if(is_connected == false)
-//    {
-//        cout<<"The graph is not connected"<<endl;
-//    }
-//    else
-//    {
-//        cout<<"The graph is connected"<<endl;
-//    }
-
-
-
-
-    
-    // minimum distance from source vertex
     for(int i=0; i<distance.size(); i++)
     {
         cout<<distance[i]<<" ";
@@ -110,7 +84,7 @@ int main()
 
 
     
-    // print shortest path for source and destination
+
     stack<int> path;
     int destination_vertex;
 
