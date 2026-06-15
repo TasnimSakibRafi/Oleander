@@ -46,24 +46,24 @@ Node* deleteBST(Node* root, int delvalue) {
     } else if (delvalue > root->data) {
         root->right = deleteBST(root->right, delvalue);
     } else {
-        // Case 1: No child
+        
         if (root->left == nullptr && root->right == nullptr) {
             delete root;
             return nullptr;
         }
-        // Case 2: One child (left)
+        
         else if (root->left != nullptr && root->right == nullptr) {
             Node* temp = root->left;
             delete root;
             return temp;
         }
-        // Case 2: One child (right)
+        
         else if (root->left == nullptr && root->right != nullptr) {
             Node* temp = root->right;
             delete root;
             return temp;
         }
-        // Case 3: Two children
+        
         else {
             Node* successor = findInorderSuccessor(root);
             root->data = successor->data;
@@ -83,7 +83,7 @@ void in_order(Node* node) {
 int main() {
     Node* root = nullptr;
 
-    // Build BST
+  
     root = insert(root, 100);
     root = insert(root, 20);
     root = insert(root, 500);
@@ -95,7 +95,7 @@ int main() {
     in_order(root);
     cout << endl;
 
-    // Delete a node
+    
     root = deleteBST(root, 20);
 
     cout << "BST In-order after deleting 20: ";
